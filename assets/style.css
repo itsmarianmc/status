@@ -1,0 +1,621 @@
+:root {
+	--accent: #f9e2af;
+	--bg-2: hsl(220, 10%, 17%);
+	--bg-3: hsl(220, 10%, 11%);
+	--bg-4: hsl(220, 10%, 16%);
+	--bg-t-2: hsla(220, 12%, 5%, 0.5);
+	--bg-t: hsla(220, 12%, 5%, 0.25);
+	--bg: hsl(220, 10%, 8%);
+	--border-d: #334155;
+	--border: hsl(0, 0%, 100%);
+	--error: #f38ba8;
+	--gradient-primary: linear-gradient(90deg, #CF5DEB 0%, #9F3DFA 100%);
+	--gradient-secondary: linear-gradient(90deg, var(--txt-1) 0%, var(--txt) 100%);
+	--success: #a6e3a1;
+	--warning: #f9e2af;
+	--maintenance: #89b4fa;
+	--txt-1: hsl(220, 45%, 90%);
+	--txt-2: hsl(220, 14%, 55%);
+	--txt-3: hsl(220, 11%, 35%);
+	--txt-4: #000000;
+	--txt: hsl(220, 30%, 80%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+	background: var(--bg);
+	color: var(--txt);
+	line-height: 1.6;
+	padding: 1rem;
+	min-height: 100vh;
+	background-image:
+		radial-gradient(circle at 10% 20%, rgba(49, 46, 129, 0.1) 0%, transparent 20%),
+		radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	padding: 1.2rem;
+	background: var(--bg-2);
+	border-radius: 12px;
+	border: 1px solid var(--border-d);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+	position: relative;
+	overflow: hidden;
+}
+
+header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: var(--gradient-primary);
+}
+
+h1 {
+	font-size: 1.8rem;
+	margin-bottom: 0.4rem;
+	background: var(--gradient-primary);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	font-weight: 800;
+	letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+	color: var(--txt-2);
+	max-width: 600px;
+	margin: 0 auto 1rem;
+	font-size: 0.95rem;
+}
+
+.status-summary {
+	display: flex;
+	justify-content: center;
+	gap: 0.8rem;
+	margin-top: 1rem;
+	flex-wrap: wrap;
+}
+
+.status-card {
+	background: var(--bg-3);
+	padding: 0.8rem;
+	border-radius: 10px;
+	text-align: center;
+	min-width: 90px;
+	border: 1px solid var(--border-d);
+	transition: transform 0.3s ease;
+	flex: 1;
+	max-width: 120px;
+}
+
+.status-card:hover {
+	transform: translateY(-3px);
+}
+
+.status-card .value {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 0.2rem;
+}
+
+.status-card .label {
+	color: var(--txt-2);
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1.2rem;
+	margin-top: 0.8rem;
+}
+
+.service-card {
+	background: var(--bg-4);
+	border-radius: 14px;
+	padding: 1.4rem;
+	border: 1px solid var(--border-d);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.service-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.2rem;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.service-name {
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: var(--txt-1);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex: 1;
+	min-width: 100%;
+}
+
+.service-name i {
+	width: 26px;
+	height: 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.1);
+	font-size: 14px;
+}
+
+.service-status {
+	padding: 0.35rem 0.8rem;
+	border-radius: 16px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	min-width: max-content;
+}
+
+.status-operational {
+	background: rgba(166, 227, 161, 0.15);
+	color: var(--success);
+	border: 1px solid var(--success);
+}
+
+.status-issue {
+	background: rgba(249, 226, 175, 0.15);
+	color: var(--warning);
+	border: 1px solid var(--warning);
+}
+
+.status-down {
+	background: rgba(243, 139, 168, 0.15);
+	color: var(--error);
+	border: 1px solid var(--error);
+}
+
+.status-maintenance {
+	background: rgba(137, 180, 250, 0.15);
+	color: var(--maintenance);
+	border: 1px solid var(--maintenance);
+}
+
+.status-checking {
+	background: rgba(136, 136, 136, 0.15);
+	color: var(--txt-2);
+	border: 1px solid var(--txt-2);
+}
+
+.service-meta {
+	display: flex;
+	justify-content: space-between;
+	color: var(--txt-2);
+	font-size: 0.8rem;
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--border-d);
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.last-updated {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.response-time {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.service-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+}
+
+.status-operational::before {
+	background: var(--success);
+}
+
+.status-issue::before {
+	background: var(--warning);
+}
+
+.status-down::before {
+	background: var(--error);
+}
+
+.status-maintenance::before {
+	background: var(--maintenance);
+}
+
+.status-checking::before {
+	background: var(--txt-2);
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	gap: 0.8rem;
+	margin: 1.5rem 0;
+	flex-wrap: wrap;
+}
+
+button {
+	background: var(--gradient-primary);
+	color: var(--txt-4);
+	border: none;
+	padding: 0.7rem 1.4rem;
+	border-radius: 10px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.2s, opacity 0.2s;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	box-shadow: 0 3px 8px rgba(159, 61, 250, 0.25);
+	font-size: 0.9rem;
+	flex: 1;
+	min-width: 160px;
+	max-width: 100%;
+	justify-content: center;
+}
+
+button:hover {
+	transform: scale(1.03);
+	opacity: 0.9;
+}
+
+button:active {
+	transform: scale(0.97);
+}
+
+.section-title {
+	color: var(--txt-1);
+	margin: 1.8rem 0 1rem;
+	font-size: 1.4rem;
+	padding-bottom: 0.4rem;
+	border-bottom: 2px solid var(--border-d);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.github-status {
+	padding: 0.4rem 0.8rem;
+	border-radius: 16px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	background: rgba(255, 255, 255, 0.1);
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.status-indicator {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.status-operational .status-indicator {
+	background: var(--success);
+}
+
+.status-issue .status-indicator {
+	background: var(--warning);
+}
+
+.status-down .status-indicator {
+	background: var(--error);
+}
+
+.last-checked {
+	text-align: center;
+	color: var(--txt-2);
+	margin: 0.8rem 0;
+	font-size: 0.85rem;
+}
+
+.footer {
+	text-align: center;
+	margin-top: 2.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border-d);
+	color: var(--txt-2);
+	font-size: 0.85rem;
+}
+
+.footer a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.notification {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	left: 15px;
+	padding: 12px 20px;
+	border-radius: 8px;
+	background: var(--bg-3);
+	border-left: 4px solid var(--success);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+	transform: translateY(-100px);
+	transition: transform 0.4s ease;
+	z-index: 1000;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.notification.show {
+	transform: translateY(0);
+}
+
+.notification.error {
+	border-left-color: var(--error);
+}
+
+.tab-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.tab {
+	padding: 8px 16px;
+	background: var(--bg-3);
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s;
+	font-size: 0.9rem;
+	flex: 1;
+	text-align: center;
+	min-width: 140px;
+	max-width: 100%;
+}
+
+.tab.active {
+	background: var(--gradient-primary);
+	color: var(--txt-4);
+	font-weight: 600;
+}
+
+@media (max-width: 768px) {
+	body {
+		padding: 0.8rem;
+	}
+
+	header {
+		padding: 1rem 0.8rem;
+		margin-bottom: 1.2rem;
+	}
+
+	h1 {
+		font-size: 1.6rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.header-subtitle {
+		font-size: 0.85rem;
+		margin-bottom: 0.8rem;
+	}
+
+	.status-summary {
+		gap: 0.6rem;
+		margin-top: 0.8rem;
+	}
+
+	.status-card {
+		padding: 0.6rem 0.8rem;
+		min-width: 85px;
+		max-width: 110px;
+	}
+
+	.status-card .value {
+		font-size: 1.4rem;
+	}
+
+	.status-card .label {
+		font-size: 0.65rem;
+	}
+
+	.services-grid {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.service-card {
+		padding: 1.2rem;
+		border-radius: 12px;
+	}
+
+	.service-header {
+		margin-bottom: 1rem;
+	}
+
+	.service-name {
+		font-size: 1.1rem;
+		min-width: 100%;
+	}
+
+	.service-status {
+		padding: 0.3rem 0.7rem;
+		font-size: 0.7rem;
+	}
+
+	.section-title {
+		font-size: 1.3rem;
+		margin: 1.5rem 0 1rem;
+	}
+
+	.controls {
+		gap: 0.6rem;
+		margin: 1.2rem 0;
+	}
+
+	button {
+		padding: 0.6rem 1rem;
+		font-size: 0.85rem;
+		min-width: 140px;
+	}
+
+	.service-meta {
+		font-size: 0.78rem;
+	}
+
+	.tab {
+		padding: 7px 12px;
+		font-size: 0.85rem;
+		min-width: 120px;
+	}
+
+	.notification {
+		padding: 10px 15px;
+		font-size: 0.9rem;
+	}
+
+	.footer {
+		margin-top: 2rem;
+		padding-top: 1.2rem;
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 1.4rem;
+	}
+
+	.status-card {
+		min-width: 75px;
+		padding: 0.5rem 0.6rem;
+	}
+
+	.status-card .value {
+		font-size: 1.3rem;
+	}
+
+	.service-card {
+		padding: 1rem;
+	}
+
+	.service-name {
+		font-size: 1rem;
+	}
+
+	.service-status {
+		font-size: 0.65rem;
+	}
+
+	.section-title {
+		font-size: 1.15rem;
+	}
+
+	button {
+		min-width: 130px;
+		padding: 0.5rem 0.8rem;
+	}
+
+	.tab {
+		min-width: 110px;
+		font-size: 0.8rem;
+		padding: 6px 10px;
+	}
+}
+
+@media (max-width: 360px) {
+	.status-card {
+		min-width: 70px;
+		padding: 0.4rem 0.5rem;
+	}
+
+	.status-card .value {
+		font-size: 1.2rem;
+	}
+
+	.service-name {
+		font-size: 0.95rem;
+	}
+
+	button {
+		min-width: 100%;
+	}
+
+	.tab {
+		min-width: 100%;
+	}
+
+	.services-grid {
+		gap: 0.8rem;
+	}
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+	body {
+		padding: 0.5rem;
+	}
+
+	header {
+		padding: 0.8rem;
+		margin-bottom: 1rem;
+	}
+
+	.status-summary {
+		gap: 0.4rem;
+	}
+
+	.service-card {
+		padding: 0.8rem;
+	}
+
+	.service-name {
+		font-size: 1rem;
+	}
+
+	.controls {
+		margin: 1rem 0;
+	}
+}
