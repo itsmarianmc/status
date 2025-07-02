@@ -21,13 +21,6 @@
 	--txt: hsl(220, 30%, 80%);
 }
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Segoe UI', system-ui, sans-serif;
-}
-
 body {
 	background: var(--bg);
 	color: var(--txt);
@@ -278,7 +271,7 @@ h1 {
 
 .controls button {
 	background: var(--gradient-primary);
-	color: var(--txt-4);
+	color: var(--txt-1);
 	border: none;
 	padding: 0.7rem 1.4rem;
 	border-radius: 10px;

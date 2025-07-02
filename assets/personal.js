@@ -1,32 +1,47 @@
 const AUTO_CHECK_INTERVAL = 60000;
 
-const personalServices = [{
-		id: 'website',
-		name: 'Website',
-		url: 'https://itsmarian.is-a.dev/',
-		description: 'Personal portfolio website',
-		icon: 'fas fa-home'
-	},
+const personalServices = [
 	{
 		id: 'blog',
 		name: 'Blog',
 		url: 'https://blog.itsmarian.is-a.dev/',
-		description: 'Personal blog with articles',
+		description: 'blog.itsmarian.is-a.dev',
 		icon: 'fas fa-blog'
+	},
+	{
+		id: 'file-host',
+		name: 'File and assets host',
+		url: 'https://itsmarian-static.is-a.dev/',
+		description: 'itsmarian-static.is-a.dev',
+		icon: 'fas fa-server'
 	},
 	{
 		id: 'pictures',
 		name: 'Pictures',
 		url: 'https://pics.itsmarian.is-a.dev/',
-		description: 'Image gallery and assets',
+		description: 'pics.itsmarian.is-a.dev',
 		icon: 'fas fa-image'
 	},
 	{
 		id: 'projects',
 		name: 'Projects',
 		url: 'https://projects.itsmarian.is-a.dev/',
-		description: 'Project showcase portfolio',
+		description: 'projects.itsmarian.is-a.dev',
 		icon: 'fas fa-code'
+	},
+	{
+		id: 'status',
+		name: 'Status',
+		url: 'https://status.itsmarian.is-a.dev/',
+		description: 'status.itsmarian.is-a.dev',
+		icon: 'fas fa-heartbeat'
+	},
+	{
+		id: 'website',
+		name: 'Website',
+		url: 'https://itsmarian.is-a.dev/',
+		description: 'itsmarian.is-a.dev',
+		icon: 'fas fa-home'
 	}
 ];
 
