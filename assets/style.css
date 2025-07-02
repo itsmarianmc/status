@@ -276,7 +276,7 @@ h1 {
 	flex-wrap: wrap;
 }
 
-button {
+.controls button {
 	background: var(--gradient-primary);
 	color: var(--txt-4);
 	border: none;
@@ -296,12 +296,12 @@ button {
 	justify-content: center;
 }
 
-button:hover {
+.controls button:hover {
 	transform: scale(1.03);
 	opacity: 0.9;
 }
 
-button:active {
+.controls button:active {
 	transform: scale(0.97);
 }
 
