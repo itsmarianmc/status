@@ -120,13 +120,13 @@ async function checkService(service) {
 		service.statusElement.className = 'service-status status-checking';
 
 		const startTime = Date.now();
-
 		const uniqueUrl = `${service.url}?t=${Date.now()}`;
 
 		const response = await fetch(uniqueUrl, {
-			method: 'HEAD',
+			method: 'GET',
 			cache: 'no-cache',
-			redirect: 'error',
+			redirect: 'follow',
+			mode: 'no-cors',
 			headers: {
 				'User-Agent': 'MarianServiceStatus/1.0'
 			}
@@ -136,7 +136,7 @@ async function checkService(service) {
 		const responseTime = endTime - startTime;
 		service.responseTime = responseTime;
 
-		if (response.status >= 200 && response.status < 400) {
+		if (response.status === 0 || (response.status >= 200 && response.status < 400)) {
 			service.statusElement.textContent = 'Operational';
 			service.statusElement.className = 'service-status status-operational';
 		} else if (response.status === 503) {
@@ -150,6 +150,7 @@ async function checkService(service) {
 		service.lastUpdated = new Date();
 		updateServiceDisplay(service);
 	} catch (error) {
+		console.error(`Fehler bei ${service.url}:`, error);
 		service.statusElement.textContent = 'Unavailable';
 		service.statusElement.className = 'service-status status-down';
 		service.responseTime = null;
