@@ -30,6 +30,13 @@ const personalServices = [
 		icon: 'fas fa-code'
 	},
 	{
+		id: 'snippets',
+		name: 'Snippets',
+		url: 'https://snippets.itsmarian.is-a.dev/',
+		description: 'snippets.itsmarian.is-a.dev',
+		icon: 'fas fa-file'
+	},
+	{
 		id: 'status',
 		name: 'Status',
 		url: 'https://status.itsmarian.is-a.dev/',
