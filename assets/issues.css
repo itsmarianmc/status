@@ -1,3 +1,7 @@
+.btn, .btn-primary, .btn-secondary {
+	cursor: none;
+}
+
 .issues-container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -182,4 +186,25 @@
 	border-radius: 12px;
 	background: var(--bg-4);
 	font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+	.btn, .btn-primary, .btn-secondary {
+		cursor: pointer !important;
+	}
+
+	.issue-meta {
+		align-items: flex-start;
+		flex-direction: column;
+		margin-top: 1rem;
+	}
+
+	.issue-title {
+		display: block;
+	}
+
+	.issue-title span {
+		margin-left: 0px;
+		width: 100%;
+	}
 }
