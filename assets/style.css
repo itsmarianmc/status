@@ -67,6 +67,10 @@ h1 {
 	letter-spacing: -0.5px;
 }
 
+.linkout, .nodecoration {
+	cursor: none;
+}
+
 .header-subtitle {
 	color: var(--txt-2);
 	max-width: 600px;
@@ -273,7 +277,7 @@ h1 {
 	padding: 0.7rem 1.4rem;
 	border-radius: 10px;
 	font-weight: 600;
-	cursor: pointer;
+	cursor: none;
 	transition: transform 0.2s, opacity 0.2s;
 	display: flex;
 	align-items: center;
@@ -371,7 +375,7 @@ h1 {
 	background: var(--bg-3);
 	border-left: 4px solid var(--success);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-	transform: translateY(-100px);
+	transform: translateY(-150px);
 	transition: transform 0.4s ease;
 	z-index: 1000;
 	max-width: 400px;
@@ -507,6 +511,10 @@ h1 {
 		font-size: 0.9rem;
 	}
 
+	#services-issues-dashboard > .controls {
+		flex-direction: column;
+	}
+
 	.footer {
 		margin-top: 2rem;
 		padding-top: 1.2rem;
@@ -515,6 +523,10 @@ h1 {
 }
 
 @media (max-width: 480px) {
+	.linkout, .nodecoration {
+		cursor: pointer !important;
+	}
+
 	h1 {
 		font-size: 1.4rem;
 	}
@@ -545,6 +557,7 @@ h1 {
 	}
 
 	button {
+		cursor: pointer !important;
 		min-width: 130px;
 		padding: 0.5rem 0.8rem;
 	}

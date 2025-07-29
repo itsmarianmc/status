@@ -1,0 +1,20 @@
+{
+    "hydrotrack": {
+        "app_id": "c22y-k7lz-kI45-yV6s",
+        "utm_src": "project_hydrotrack-c22y",
+        "app_name": "HydroTrack",
+        "app_site_link": "hydrotrack"
+    },
+    "mainpage": {
+        "app_id": "yah9-HGjo-0fHs-vkSZ",
+        "utm_src": "index_is-a-dev_yah9",
+        "app_name": "the Mainpage",
+        "app_site_link": "mainpage"
+    },
+    "ntrack": {
+        "app_id": "l3mY-T3Rb-WagA-oXlt",
+        "utm_src": "project_ntrack_l3mY",
+        "app_name": "N'Track",
+        "app_site_link": "ntrack"
+    }
+}

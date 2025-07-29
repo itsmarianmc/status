@@ -1,0 +1,185 @@
+.issues-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.issue-card {
+	background: var(--bg-3);
+	border-radius: 14px;
+	padding: 1.4rem;
+	border: 1px solid var(--border-d);
+	margin-bottom: 1.5rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	position: relative;
+	overflow: hidden;
+}
+
+.issue-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+}
+
+.issue-critical::before {
+	background: var(--error);
+}
+
+.issue-high::before {
+	background: var(--warning);
+}
+
+.issue-medium::before {
+	background: var(--maintenance);
+}
+
+.issue-low::before {
+	background: var(--success);
+}
+
+.issue-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+	flex-wrap: wrap;
+}
+
+.issue-title {
+    align-items: center;
+    display: flex;
+	font-size: 1.3rem;
+	font-weight: 600;
+	color: var(--txt-1);
+	flex: 1;
+}
+
+.issue-meta {
+	display: flex;
+	gap: 15px;
+	color: var(--txt-2);
+	font-size: 0.85rem;
+}
+
+.issue-meta span {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+
+.issue-status {
+	padding: 0.35rem 0.8rem;
+	border-radius: 16px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+
+.status-open {
+	background: rgba(243, 139, 168, 0.15);
+	color: var(--error);
+}
+
+.status-investigating {
+	background: rgba(249, 226, 175, 0.15);
+	color: var(--warning);
+}
+
+.status-fixed {
+	background: rgba(166, 227, 161, 0.15);
+	color: var(--success);
+}
+
+.issue-content {
+	margin-top: 1.2rem;
+	line-height: 1.7;
+}
+
+.issue-timeline {
+	margin-top: 1.5rem;
+	border-top: 1px solid var(--border-d);
+	padding-top: 1.2rem;
+}
+
+.timeline-item {
+	margin-bottom: 1.2rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 8px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--txt-2);
+}
+
+.timeline-date {
+	font-weight: 600;
+	color: var(--txt-1);
+	margin-bottom: 0.3rem;
+}
+
+.no-issues {
+	text-align: center;
+	padding: 3rem;
+	color: var(--txt-2);
+}
+
+.no-issues i {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+	color: var(--success);
+}
+
+.priority-badge {
+	padding: 0.25rem 0.7rem;
+	border-radius: 12px;
+	font-size: 0.7rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	margin-left: 10px;
+}
+
+.priority-critical {
+	background: rgba(243, 139, 168, 0.15);
+	color: var(--error);
+}
+
+.priority-high {
+	background: rgba(249, 226, 175, 0.15);
+	color: var(--warning);
+}
+
+.priority-medium {
+	background: rgba(137, 180, 250, 0.15);
+	color: var(--maintenance);
+}
+
+.priority-low {
+	background: rgba(166, 227, 161, 0.15);
+	color: var(--success);
+}
+
+.affected-services {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 1rem;
+}
+
+.service-tag {
+	padding: 0.3rem 0.7rem;
+	border-radius: 12px;
+	background: var(--bg-4);
+	font-size: 0.8rem;
+}

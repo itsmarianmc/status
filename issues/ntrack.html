@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="https://itsmarian.is-a.dev/assets/logos/favicon.webp" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>itsmarian Service Status</title>
+    <title>N'Track Service Status</title>
     <link rel="stylesheet" href="https://itsmarian-static.is-a.dev/fonts/font-awesome-6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://itsmarian-static.is-a.dev/global/variables.css">
     <link rel="stylesheet" href="https://itsmarian-static.is-a.dev/global/style.css">
+    <link rel="stylesheet" href="/assets/issues.css">
     <link rel="stylesheet" href="/assets/style.css">
-    <!-- META -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="itsmarian">
-    <meta name="description" content="itsmarian Service Status">
-    <meta name="keywords" content="itsmarian, itsmarianmc, itsmarian.mc, DerVertragsmann, itsmarian developer, itsmarian projects, itsmarian website, itsmarian GitHub, itsmarian YouTube, itsmarian Twitch, itsmarian portfolio, itsmarian coding, itsmarian Minecraft, itsmarian Fortnite, itsmarian socials, itsmarian contact, itsmarian creator, itsmarian programming, itsmarian web developer, itsmarian apps, itsmarian online presence, itsmarianmc official, itsmarian personal brand">
-    <meta name="referrer" content="no-referrer">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="itsmarian">
-    <meta property="og:description" content="itsmarian Service Status">
-    <meta property="og:image" content="https://itsmarian.is-a.dev/assets/logos/favicon-transparent.png">
-    <meta property="og:url" content="https://status.itsmarian.is-a.dev/">
-    <meta property="og:type" content="website">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E9SPPVJFL"></script>
     <script>
@@ -32,69 +21,35 @@
     </script>
 </head>
 <body>
-    <div class="notification" id="notification">
-        <i class="fas fa-check-circle"></i> Status updated successfully
-    </div>
-    <div class="notification" id="notificationUtm">
-        <i class="fas fa-check-circle"></i> Status updated successfully
-    </div>
     <div class="container">
         <header>
-            <div class="status-summary">
-                <div class="status-card">
-                    <div class="value" id="operational-count">0</div>
-                    <div class="label">Operational</div>
-                </div>
-                <div class="status-card">
-                    <div class="value" id="total-count">7</div>
-                    <div class="label">Services</div>
-                </div>
-                <div class="status-card">
-                    <div class="value" id="issues-count">0</div>
-                    <div class="label">Issues</div>
-                </div>
-            </div>
+            <h1>Known Issues & Incidents for "N'Track"</h1>
+            <p class="header-subtitle">Current and past service disruptions</p>
             <div class="controls">
-                <button id="check-btn">
-                    <i class="fas fa-sync-alt"></i> Check Status
-                </button>
-                <button id="auto-toggle">
-                    <i class="fas fa-power-off"></i> Auto Check: OFF
-                </button>
-            </div>
-            <div class="last-checked" id="last-checked">
-                Last checked: Never
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Status
+                </a>
             </div>
         </header>
-        <main>
-            <div class="dashboard-section" id="personal-dashboard">
-                <h2 class="section-title"><i class="fas fa-globe"></i> Personal Services</h2>
-                <div class="services-grid" id="personal-services-grid"></div>
+        <main class="issues-container">
+            <div class="dashboard-section">
+                <h2 class="section-title">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Active Issues
+                </h2>
+                <p>There are no active issues, all services are operational</p>
             </div>
-            <div class="dashboard-section" id="github-dashboard">
-                <h2 class="section-title"><i class="fab fa-github"></i> GitHub Platform Services</h2>
-                <div class="github-status status-operational">
-                    <span class="status-indicator"></span>
-                    <span id="github-status-text">GitHub: All systems operational</span>
-                </div>
-                <div class="services-grid" id="github-services-grid"></div>
-            </div>
-            <div class="dashboard-section" id="services-issues-dashboard">
-                <h2 class="section-title"><i class="fas fa-globe"></i> Services Issues</h2>
-                <div class="controls">
-                    <button class="btn btn-primary">
-                        <a class="linkout nodecoration" href="/issues/hydrotrack" style="text-decoration: none !important;">HydroTrack</a>
-                    </button>
-                    <button class="btn btn-primary">
-                        <a class="linkout nodecoration" href="/issues/mainpage" style="text-decoration: none !important;">Mainpage</a>
-                    </button>
-                    <button class="btn btn-primary">
-                        <a class="linkout nodecoration" href="/issues/ntrack" style="text-decoration: none !important;">N'Track</a>
-                    </button>
-                </div>
+            <div class="dashboard-section">
+                <h2 class="section-title">
+                    <i class="fas fa-history"></i>
+                    Resolved Issues
+                </h2>
+                <p>There are no resolved issues yet.</p>
             </div>
         </main>
     </div>
+    
     <footer>
         <div>
             <a class="linkout nodecoration" href="https://itsmarian.is-a.dev/legal/privacy" target="_blank">Privacy Policy</a>
@@ -262,8 +217,5 @@
     <script src="https://itsmarian-static.is-a.dev/global/cookie-banner.js"></script>
     <script src="https://itsmarian-static.is-a.dev/global/basic.min.js"></script>
     <script src="https://itsmarian-static.is-a.dev/global/cursor.js"></script>
-    <script src="/assets/personal.js"></script>
-    <script src="/assets/github.js"></script>
-    <script src="/assets/services.js"></script>
 </body>
 </html>
